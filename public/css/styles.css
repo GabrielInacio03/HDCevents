@@ -1,0 +1,27 @@
+* body{
+    overflow: hidden;
+}
+.banner{
+    width: 80px;
+    height: 80px;
+}
+.cabecalho{
+    margin-top: .8rem;
+    margin-bottom: 1.5rem;
+}
+.eventos{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.card{
+    margin-left: 1rem;
+    margin-bottom: 1.8rem;
+}
+.forms{
+    display: flex;
+    flex-wrap: wrap;
+}
+.campos{
+    margin-left: 1em;
+}
