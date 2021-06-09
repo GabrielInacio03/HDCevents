@@ -9,18 +9,23 @@
         </div>
         <div class="row">
             <div class="col-md-12 eventos">
-                <form class="col-md-12 forms">
+                <form class="col-md-12 forms" action="/events" method="POST">
+                <!-- diretiva do blade -->
+                @csrf
                     <div class="col-md-4 ">
                         <label for="titulo" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="titulo" required>
+                        <input type="text" class="form-control" id="titulo" name="titulo" required>
                     </div>
                     <div class="col-md-4 campos">
                         <label for="local" class="form-label">Local</label>
-                        <input type="text" class="form-control" id="local" required>
+                        <input type="text" class="form-control" id="local" name="local" required>
                     </div>
                     <div class="col-md-3 campos">
                         <label for="privado" class="form-label">Privado</label>
-                        <input type="text" class="form-control" id="privado" required>
+                        <select name="privado" id="privado" class="form-select">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
                     </div>
                     <div class="col-md-12 ">
                         <label for="descricao" class="form-label">Descrição</label><br>

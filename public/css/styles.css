@@ -1,13 +1,31 @@
 * body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .banner{
     width: 80px;
     height: 80px;
 }
+.menu{
+    display: flex;
+	flex-direction: column;
+    background: url('/img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
 .cabecalho{
     margin-top: .8rem;
     margin-bottom: 1.5rem;
+}
+.navbar{
+    background-color: #fff;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: .1em .1em .2em #606060;
+}
+.navbar-nav{
+    display: flex;
+    flex-wrap: wrap;
+
 }
 .eventos{
     display: flex;

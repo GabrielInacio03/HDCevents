@@ -17,9 +17,9 @@
         <link href="/css/styles.css" rel="stylesheet">
     </head>
     <body>
-        <header class="row">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="collapse navbar-collapse" id="navbarNav">
+        <header class="row menu">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+                <div class="container-fluid collapse" id="navbarNav">
                     <a href="/" class="navbar-brand">
                         <img src="/img/hdcevents_logo.svg" alt="HDC Events" class="banner">
                     </a>
@@ -40,7 +40,6 @@
                 </div>
             </nav>
         </header>
-        <div class="linha"></div>
         @yield('content')
         <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
     </body>
