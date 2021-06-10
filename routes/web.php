@@ -5,5 +5,11 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']);
+
+//create
 Route::get('/events/create', [EventController::class, 'create']);
 Route::post('/events', [EventController::class, 'store']);
+
+//edit
+Route::get('/events/edit/{id}', [EventController::class,'edit']);
+Route::put('/events/edit/{id}', [EventController::class, 'update']);

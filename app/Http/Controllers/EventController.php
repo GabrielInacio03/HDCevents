@@ -25,6 +25,24 @@ class EventController extends Controller
         $event->privado = ($event->privado == "sim"? 1:0);
         $event->save();
 
+        //Flash Messages
+        return redirect('/')->with('msg', 'Evento criado com sucesso');
+    }
+
+    public function edit($id){
+        $event = Event::find($id);
+        return view('events.edit', compact('event'));
+    }
+
+    public function update(Request $request, $id){
+        $event = Event::find($id);
+        $event->titulo = $request->input('titulo');
+        $event->descricao = $request->input('descricao');
+        $event->local = $request->input('local');
+        $event->privado = $request->input('privado');
+        $event->privado = ($event->privado == "sim"? 1:0);
+
+        $event->save();
         return redirect('/');
     }
 

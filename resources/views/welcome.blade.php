@@ -23,6 +23,7 @@
                                     Não Privado
                                 @endif
                             </div>
+                            <a  href="/events/edit/{{$item->id}}" class="btn btn-success">Editar</a>
                         </div>
                     @endforeach
                 @endisset

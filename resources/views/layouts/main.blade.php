@@ -40,6 +40,15 @@
                 </div>
             </nav>
         </header>
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <p class="msg">{{ session('msg') }}</p>
+                    @endif
+                </div>
+            </div>
+        </main>
         @yield('content')
         <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
     </body>
