@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 eventos">
-                <form class="col-md-12 forms" action="/events" method="POST">
+                <form class="col-md-12 forms" action="/events" method="POST" enctype="multipart/form-data">
                 <!-- diretiva do blade -->
                 @csrf
                     <div class="col-md-4 ">
@@ -30,6 +30,9 @@
                     <div class="col-md-12 ">
                         <label for="descricao" class="form-label">Descrição</label><br>
                         <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" id="imagem" name="imagem" class="form-control-file">
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Salvar</button>

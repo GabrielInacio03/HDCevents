@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->text('descricao');
             $table->string('local');
             $table->boolean('privado');
+            $table->binary('imagem')->nullable();
             $table->timestamps();
         });
     }

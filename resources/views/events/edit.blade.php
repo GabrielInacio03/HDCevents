@@ -40,6 +40,9 @@
                         <label for="descricao" class="form-label">Descrição</label><br>
                         <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control">{{$event->descricao}}</textarea>
                     </div>
+                    <div class="col-md-6">
+                        <input type="File" id="imagem" name="imagem" class="form-control">
+                    </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Salvar</button>
                     </div>

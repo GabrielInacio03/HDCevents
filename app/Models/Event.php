@@ -16,5 +16,6 @@ class Event extends Model
         'descricao',
         'local',
         'privado',
+        'imagem',
     ];
 }

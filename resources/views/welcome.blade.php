@@ -12,7 +12,7 @@
                 @isset($events)
                     @foreach($events as $item)
                         <div class="card" style="width: 18rem;">
-                            <img src="/img/event_placeholder.jpg" class="card-img-top" alt="...">
+                            <img src="/img/events/{{$item->imagem}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item->titulo}}</h5>
                                 <p class="card-text">{{$item->descricao}}</p>

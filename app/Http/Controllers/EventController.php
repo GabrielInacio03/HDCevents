@@ -22,7 +22,20 @@ class EventController extends Controller
         $event->descricao = $request->descricao;
         $event->local = $request->local;
         $event->privado = $request->privado;
-        $event->privado = ($event->privado == "sim"? 1:0);
+        $event->privado = ($event->privado == "sim"? 1 :0);
+
+
+        //Upload de imagem
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $requestImagem = $request->imagem;
+            $extension = $requestImagem->extension();
+
+            $nomeImagem = md5($requestImagem->getClientOriginalName().strtotime("now")).".". $extension;
+
+            //salvando so servidor
+            $request->imagem->move(public_path('img/events'), $nomeImagem);
+            $event->imagem =$nomeImagem;
+        }
         $event->save();
 
         //Flash Messages
@@ -41,6 +54,19 @@ class EventController extends Controller
         $event->local = $request->input('local');
         $event->privado = $request->input('privado');
         $event->privado = ($event->privado == "sim"? 1:0);
+
+
+        //Upload de imagem
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $requestImagem = $request->imagem;
+            $extension = $requestImagem->extension();
+
+            $nomeImagem = md5($requestImagem->getClientOriginalName().strtotime("now")).".". $extension;
+
+            //salvando so servidor
+            $request->imagem->move(public_path('img/events'), $nomeImagem);
+            $event->imagem =$nomeImagem;
+        }
 
         $event->save();
         return redirect('/');
