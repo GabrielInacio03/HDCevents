@@ -1,44 +1,56 @@
 @extends('layouts.main')
 @section('title', 'HDC Events | Produtos')
 @section('content')
-    <div class="container">
+    <div class="col-md-6 offset-md-3" id="event-create-container">
         <div class="row cabecalho">
             <div class="col-md-12 text-center">
                 <h2 class="titulo">Criar Evento</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 eventos">
-                <form class="col-md-12 forms" action="/events" method="POST" enctype="multipart/form-data">
-                <!-- diretiva do blade -->
-                @csrf
-                    <div class="col-md-4 ">
-                        <label for="titulo" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="titulo" name="titulo" required>
-                    </div>
-                    <div class="col-md-4 campos">
-                        <label for="local" class="form-label">Local</label>
-                        <input type="text" class="form-control" id="local" name="local" required>
-                    </div>
-                    <div class="col-md-3 campos">
-                        <label for="privado" class="form-label">Privado</label>
-                        <select name="privado" id="privado" class="form-select">
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
-                        </select>
-                    </div>
-                    <div class="col-md-12 ">
-                        <label for="descricao" class="form-label">Descrição</label><br>
-                        <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control"></textarea>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="file" id="imagem" name="imagem" class="form-control-file">
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Salvar</button>
-                    </div>
-                </form>
+        <form action="/events" method="POST" enctype="multipart/form-data">
+        <!-- diretiva do blade -->
+        @csrf
+            <div class="form-group">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="local" class="form-label">Local</label>
+                <input type="text" class="form-control" id="local" name="local" required>
+            </div>
+            <div class="form-group">
+                <label for="privado" class="form-label">Privado</label>
+                <select name="privado" id="privado" class="form-select">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descricao" class="form-label">Descrição</label><br>
+                <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="file" id="imagem" name="imagem" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="title">Adicione itens de infraestrutura:</label>
+                <div class="form-group">
+                    <input type="checkbox" name="itens[]" value="Cadeiras"> Cadeiras
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="itens[]" value="Palco"> Palco
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="itens[]" value="Cerveja grátis"> Cerveja grátis
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="itens[]" value="Open Food"> Open food
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="itens[]" value="Brindes"> Brindes
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Criar Evento">
+        </form>
     </div>
 @endsection

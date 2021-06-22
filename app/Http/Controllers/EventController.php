@@ -24,6 +24,9 @@ class EventController extends Controller
         $event->privado = $request->privado;
         $event->privado = ($event->privado == "sim"? 1 :0);
 
+        //JSON
+        $event->itens = json_encode($request->itens);
+
 
         //Upload de imagem
         if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
@@ -43,33 +46,25 @@ class EventController extends Controller
     }
 
     public function edit($id){
-        $event = Event::find($id);
+        $event = Event::findOrFail($id);
         return view('events.edit', compact('event'));
     }
 
     public function update(Request $request, $id){
-        $event = Event::find($id);
+        $event = Event::findOrFail($id);
         $event->titulo = $request->input('titulo');
         $event->descricao = $request->input('descricao');
         $event->local = $request->input('local');
         $event->privado = $request->input('privado');
         $event->privado = ($event->privado == "sim"? 1:0);
 
-
-        //Upload de imagem
-        if($request->hasFile('imagem') && $request->file('imagem')->isValid()){
-            $requestImagem = $request->imagem;
-            $extension = $requestImagem->extension();
-
-            $nomeImagem = md5($requestImagem->getClientOriginalName().strtotime("now")).".". $extension;
-
-            //salvando so servidor
-            $request->imagem->move(public_path('img/events'), $nomeImagem);
-            $event->imagem =$nomeImagem;
-        }
-
         $event->save();
         return redirect('/');
+    }
+
+    public function show($id){
+        $event = Event::findOrFail($id);
+        return view('events.show', compact('event'));
     }
 
 }

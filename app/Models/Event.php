@@ -17,5 +17,6 @@ class Event extends Model
         'local',
         'privado',
         'imagem',
+        'itens'=> 'array',
     ];
 }

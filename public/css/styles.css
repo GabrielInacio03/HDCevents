@@ -43,3 +43,14 @@
 .campos{
     margin-left: 1em;
 }
+
+/*SHOW FOTO*/
+#outline
+{
+ display: flex;
+ flex-wrap: wrap;
+}
+.events-participantes{
+    position: absolute;
+    right: 20px;
+}

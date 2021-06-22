@@ -15,15 +15,12 @@
                             <img src="/img/events/{{$item->imagem}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item->titulo}}</h5>
-                                <p class="card-text">{{$item->descricao}}</p>
-                                @if($item->privado == 1)
-                                    Privado
-                                @endif
-                                @if($item->privado == 0)
-                                    Não Privado
-                                @endif
+                                <div class="row">
+                                    <a  href="/events/edit/{{$item->id}}" class="btn btn-primary col-md-4">Editar</a>
+                                    &nbsp;
+                                    <a  href="/events/{{$item->id}}" class="btn btn-success col-md-4">Mais</a>
+                                </div>
                             </div>
-                            <a  href="/events/edit/{{$item->id}}" class="btn btn-success">Editar</a>
                         </div>
                     @endforeach
                 @endisset

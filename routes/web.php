@@ -13,3 +13,8 @@ Route::post('/events', [EventController::class, 'store']);
 //edit
 Route::get('/events/edit/{id}', [EventController::class,'edit']);
 Route::put('/events/edit/{id}', [EventController::class, 'update']);
+
+//show
+Route::get('/events/{id}', [EventController::class,'show']);
+
+
