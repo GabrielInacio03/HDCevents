@@ -18,5 +18,6 @@ class Event extends Model
         'privado',
         'imagem',
         'itens'=> 'array',
+        'data',
     ];
 }

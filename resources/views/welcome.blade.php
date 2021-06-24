@@ -14,6 +14,7 @@
                         <div class="card" style="width: 18rem;">
                             <img src="/img/events/{{$item->imagem}}" class="card-img-top" alt="...">
                             <div class="card-body">
+                                <p class="card-date">{{date('d/m/Y', strtotime($item->data))}}</p>
                                 <h5 class="card-title">{{$item->titulo}}</h5>
                                 <div class="row">
                                     <a  href="/events/edit/{{$item->id}}" class="btn btn-primary col-md-4">Editar</a>
@@ -24,6 +25,9 @@
                         </div>
                     @endforeach
                 @endisset
+                @if(count($events) == 0)
+                    <p>Não há eventos disponíveis no momento</p>
+                @endif
             </div>
         </div>
     </div>

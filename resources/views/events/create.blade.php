@@ -15,6 +15,10 @@
                 <input type="text" class="form-control" id="titulo" name="titulo" required>
             </div>
             <div class="form-group">
+                <label for="data" class="form-label">Data do Evento</label>
+                <input type="date" class="form-control" id="data" name="data" >
+            </div>
+            <div class="form-group">
                 <label for="local" class="form-label">Local</label>
                 <input type="text" class="form-control" id="local" name="local" required>
             </div>
