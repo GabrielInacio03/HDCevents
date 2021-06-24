@@ -18,10 +18,15 @@
     top: -15em;
 }
 #container-search h1{
+    position: relative;
+    top: -1.4em;
+    font-size: 3.5em;
     text-align: center;
     color: #ff7d03;
 }
 #container-search input{
+    position: relative;
+    top: -2.4em;
     width: 30%;
     margin: auto;
 }

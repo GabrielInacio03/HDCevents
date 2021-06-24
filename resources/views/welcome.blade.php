@@ -2,7 +2,7 @@
 @section('title', 'HDC Events')
 @section('content')
     <div id="container-search" class="col-md-12">
-        <h1>Busque um Evento</h1>
+        <h1>Busque por um Evento</h1>
         <form action="/" method="GET">
             <input type="text" id="search" name="search" class="form-control" placeholder="Procure um Evento">
         </form>
