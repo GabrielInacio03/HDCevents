@@ -13,9 +13,30 @@
     background-position: center;
     height: 80vh;
 }
+#container-search{
+    position: relative;
+    top: -15em;
+}
+#container-search h1{
+    text-align: center;
+    color: #ff7d03;
+}
+#container-search input{
+    width: 30%;
+    margin: auto;
+}
 .cabecalho{
-    margin-top: .8rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -2.5rem;
     margin-bottom: 1.5rem;
+}
+.cabecalho h2{
+    margin-left: 1rem;
+}
+#todos{
+    position: absolute;
+    right: 8px;
 }
 .navbar{
     background-color: #fff;
