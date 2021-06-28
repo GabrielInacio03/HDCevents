@@ -17,8 +17,6 @@ Route::put('/events/edit/{id}', [EventController::class, 'update']);
 //show
 Route::get('/events/{id}', [EventController::class,'show']);
 
+//dashboard
+Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
