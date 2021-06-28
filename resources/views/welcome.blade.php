@@ -13,10 +13,11 @@
                 <a href="/" class="btn btn-danger" id="todos">Ver todos</a>
                 <h2 class="titulo">Buscando por: {{$search}}</h2>
             @else
-                <h2 class="titulo">Próximos Eventos</h2>
+                <h2 class="titulo">Próximos Eventos: </h2>
             @endif
         </div>
     </div>
+    <!-- Section-->
     <div class="container">
         <div class="row">
             <div class="col-md-10 eventos">
@@ -26,7 +27,9 @@
                             <img src="/img/events/{{$item->imagem}}" class="card-img-top" alt="{{$item->titulo}}">
                             <div class="card-body">
                                 <p class="card-date">{{date('d/m/Y', strtotime($item->data))}}</p>
-                                <h5 class="card-title">{{$item->titulo}}</h5>
+                                <div class="text-center">
+                                    <h5 class="card-title">{{$item->titulo}}</h5>
+                                </div>
                                 <div class="row">
                                     {{--
                                     <a  href="/events/edit/{{$item->id}}" class="btn btn-primary col-md-4">Editar</a>

@@ -7,7 +7,7 @@
                 <h2 class="titulo">Criar Evento</h2>
             </div>
         </div>
-        <form action="/events" method="POST" enctype="multipart/form-data">
+        <form action="/events" method="POST" enctype="multipart/form-data" style="margin-bottom:.5em;">
         <!-- diretiva do blade -->
         @csrf
             <div class="form-group">
@@ -32,12 +32,15 @@
             <div class="form-group">
                 <label for="descricao" class="form-label">Descrição</label><br>
                 <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control"></textarea>
-            </div>
+            </div><br>
             <div class="form-group">
                 <input type="file" id="imagem" name="imagem" class="form-control">
             </div>
             <div class="form-group">
-                <label for="title">Adicione itens de infraestrutura:</label>
+                <div class="text-center">
+                    <br>
+                    <label for="title">Adicione itens de infraestrutura:</label>
+                </div>
                 <div class="form-group">
                     <input type="checkbox" name="itens[]" value="Cadeiras"> Cadeiras
                 </div>
@@ -54,7 +57,9 @@
                     <input type="checkbox" name="itens[]" value="Brindes"> Brindes
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary" value="Criar Evento">
+            <div class="text-center">
+                <input type="submit" class="btn btn-primary" value="Criar Evento">
+            </div>
         </form>
     </div>
 @endsection

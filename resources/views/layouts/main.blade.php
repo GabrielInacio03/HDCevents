@@ -11,7 +11,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
 
         <!-- BOOTSTRAP 5 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
         <!-- ION ICON-->
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -19,9 +20,10 @@
 
         <!-- ESTILO CSS 3 -->
         <link href="/css/styles.css" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
-        <header class="row menu">
+    <header class="row menu">
             <nav class="navbar fixed-top navbar-expand-lg navbar-light">
                 <div class="container-fluid collapse" id="navbarNav">
                     <a href="/" class="navbar-brand">
@@ -69,7 +71,12 @@
                 </div>
             </div>
         </main>
+        <!-- Footer-->
         @yield('content')
         <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
+        <!-- Navigation-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
     </body>
 </html>
