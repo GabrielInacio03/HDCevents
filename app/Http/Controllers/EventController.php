@@ -48,6 +48,8 @@ class EventController extends Controller
             $request->imagem->move(public_path('img/events'), $nomeImagem);
             $event->imagem =$nomeImagem;
         }
+        $user = auth()->user();
+        $event->user_id = $user->id;
         $event->save();
 
         //Flash Messages

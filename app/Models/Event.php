@@ -20,4 +20,8 @@ class Event extends Model
         'itens'=> 'array',
         'data',
     ];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }
