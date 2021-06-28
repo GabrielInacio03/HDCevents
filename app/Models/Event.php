@@ -19,6 +19,7 @@ class Event extends Model
         'imagem',
         'itens'=> 'array',
         'data',
+        'user_id',
     ];
 
     public function user(){
