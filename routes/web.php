@@ -26,3 +26,6 @@ Route::delete('/events/{id}', [EventController::class, 'destroy']);
 //presença
 Route::post('/events/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
 
+//saindo do evento
+Route::delete('/events/leave/{id}', [EventController::class, 'leaveEvent'])->middleware('auth');
+

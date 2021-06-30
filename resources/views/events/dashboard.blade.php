@@ -57,8 +57,12 @@
                         <td scropt="row">{{$loop->index + 1}}</td>
                         <td scropt="row"><a href="/events/{{$event->id}}">{{$event->titulo}}</a></td>
                         <td scropt="row">{{count($event->users)}}</td>
-                        <td>
-                            <a  href="/events/edit/{{$event->id}}" class="btn btn-primary col-md-4">Sair</a>
+                        <td scropt="row">
+                            <form action="/events/leave/{{$event->id}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger delete-btn">Sair do Evento</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

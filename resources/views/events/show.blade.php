@@ -14,13 +14,17 @@
             </div>
             <p class="event-owner"><ion-icon name="person-outline"></ion-icon>Dono do Evento: {{$eventUser['name']}}</p>
             <p class="event-descricao col-md-12">{{$event->descricao}}</p>
-            <form action="/events/join/{{$event->id}}" method="POST">
-                @csrf
-                <a href="/events/join/{{$event->id}}" class="btn btn-primary" id="event-submit"
-                onclick="event.preventDefault();
-                this.closest('form').submit();"
-                >Confirmar Presença</a>
-            </form>
+            @if(!$hasUserJoined)
+                <form action="/events/join/{{$event->id}}" method="POST">
+                    @csrf
+                    <a href="/events/join/{{$event->id}}" class="btn btn-primary" id="event-submit"
+                    onclick="event.preventDefault();
+                    this.closest('form').submit();"
+                    >Confirmar Presença</a>
+                </form>
+            @else
+                <p class="already-joined-msg">Já está participando do evento</p>
+            @endif
             <p>INFRA</p>
             <p>
             @foreach(json_decode($event->itens) as $item)
