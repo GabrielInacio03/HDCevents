@@ -82,3 +82,7 @@
     position: absolute;
     right: 8px;
 }
+.dashboard-container{
+    display: flex;
+    flex-wrap: wrap;
+}
