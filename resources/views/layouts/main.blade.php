@@ -62,15 +62,11 @@
                 </div>
             </nav>
         </header>
-        <main>
-            <div class="container-fluid">
-                <div class="row">
-                    @if(session('msg'))
-                        <p class="msg">{{ session('msg') }}</p>
-                    @endif
-                </div>
+        @if(session('msg'))
+            <div class="alert alert-danger" role="alert">
+                <p class="msg">{{ session('msg') }}</p>
             </div>
-        </main>
+        @endif
         <!-- Footer-->
         @yield('content')
         <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>

@@ -23,7 +23,11 @@
                         <td scropt="row">X</td>
                         <td>
                             <a  href="/events/edit/{{$event->id}}" class="btn btn-primary col-md-4">Editar</a>
-                            <a  href="/events/{{$event->id}}" class="btn btn-danger col-md-4">Deletar</a>
+                            <form action="/events/{{$event->id}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

@@ -20,3 +20,6 @@ Route::get('/events/{id}', [EventController::class,'show']);
 //dashboard
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
 
+//delete
+Route::delete('/events/{id}', [EventController::class, 'destroy']);
+
