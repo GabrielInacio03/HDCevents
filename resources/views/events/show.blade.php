@@ -10,11 +10,17 @@
             <h1>{{$event->titulo}}</h1>
             <div id="outline">
                 <p class="event-city"><ion-icon name="location-outline"></ion-icon>{{$event->local}}</p>
-                <p class="events-participantes"><ion-icon name="people-outline"></ion-icon>X participantes</p>
+                <p class="events-participantes"><ion-icon name="people-outline"></ion-icon>{{count($event->users)}}</p>
             </div>
             <p class="event-owner"><ion-icon name="person-outline"></ion-icon>Dono do Evento: {{$eventUser['name']}}</p>
             <p class="event-descricao col-md-12">{{$event->descricao}}</p>
-            <a href="#" class="btn btn-primary" id="event-submit">Confirmar Presença</a>
+            <form action="/events/join/{{$event->id}}" method="POST">
+                @csrf
+                <a href="/events/join/{{$event->id}}" class="btn btn-primary" id="event-submit"
+                onclick="event.preventDefault();
+                this.closest('form').submit();"
+                >Confirmar Presença</a>
+            </form>
             <p>INFRA</p>
             <p>
             @foreach(json_decode($event->itens) as $item)

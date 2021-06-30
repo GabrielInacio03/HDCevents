@@ -91,4 +91,12 @@ class EventController extends Controller
 
         return redirect('/dashboard');
     }
+
+    public function joinEvent($id) {
+       $user = auth()->user();
+       $user->eventsAs()->attach($id);
+
+       $event = Event::findOrFail($id);
+       return redirect('/dashboard');
+    }
 }
